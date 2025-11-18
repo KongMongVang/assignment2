@@ -127,7 +127,7 @@ a:hover {
   <h1>🌳 Parks and Recreation Facilities 🌳</h1>
   <div class="container-fluid">
     <div class="nav-section">
-      <?php include('nav.php'); ?>
+      <?php include('reusable/header/nav.php'); ?>
     </div>
     <hr>
     <div class="row">
