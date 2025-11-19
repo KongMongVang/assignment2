@@ -1,7 +1,7 @@
 <style>
 .nav {
     display: flex;
-    gap: 10px;
+    gap: 15px;
 }
 </style>
 
