@@ -120,6 +120,7 @@ a:hover {
   .container-fluid {
     padding: 0 1rem;
   }
+  
 }
 </style>
 </head>
