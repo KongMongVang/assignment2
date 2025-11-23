@@ -128,13 +128,13 @@ a:hover {
   <h1>🌳 Parks and Recreation Facilities 🌳</h1>
   <div class="container-fluid">
     <div class="nav-section">
-      <?php include('reusable/header/nav.php'); ?>
+      <?php include('admin/reusable/admin-header.php'); ?>
     </div>
     <hr>
     <div class="row">
       <?php
-      require('./reusable/connect.php');
-      $query = 'SELECT p.`ASSET_NAME`, p.`AMENITIES`, p.`ADDRESS`, p.`URL`, l.`LOCATIONID`
+      require('admin/reusable/connect.php');
+      $query = 'SELECT p.`_id`, p.`ASSET_NAME`, p.`AMENITIES`, p.`ADDRESS`, p.`URL`, l.`LOCATIONID`
       FROM parks_and_recreation_facilities___4326 AS p JOIN parkslocations AS l
       ON p.`LOCATIONID` = l.`LOCATIONID`';
       $result = mysqli_query($connect,$query);
@@ -148,6 +148,16 @@ a:hover {
                 <p class="card-text"><strong>🌿 Amenities:</strong> ' . $park['AMENITIES'] . '</p>
                 <p class="card-text"><strong>📍 Address:</strong> ' . $park['ADDRESS'] . '</p>
                 <p class="card-text"><strong>🔗 URL:</strong> ' . $park['URL'] . '</p>
+                <div class="row row-cols-lg-auto">
+                  <form action="admin/parks-update.php">
+                    <input type="hidden" value="' . $park['_id'] . '">
+                    <button type="submit" class="btn btn-success">Update Park</button>
+                  </form>
+                  <form action="admin/parks-delete.php" method="POST">
+                    <input type="hidden" name="id" value="' . $park['_id'] . '">
+                    <button type="submit" name="delete-park" class="btn btn-success">Delete Park</button>
+                  </form>
+                </div>
                 </div>
               </div>
             </div>';
