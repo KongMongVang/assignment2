@@ -55,7 +55,6 @@ if (isset($_POST['login'])) {
       </div>
       <div class="row">
         <div class="col">
-            hello
             <?php if($error) echo "<p class='error'>$error</p>"; ?>
             <?php if($success) echo "<p class='success'>$success</p>"; ?>
         </div>
