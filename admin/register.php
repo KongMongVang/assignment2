@@ -51,11 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 <head>
     <title>Register</title>
-<<<<<<< Updated upstream
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-=======
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
->>>>>>> Stashed changes
 
 <style>
 :root {
@@ -143,7 +139,7 @@ button:hover {
 <body>
 
 <!-- SAME HEADER + NAV AS PARKS PAGE -->
-<?php include('reusable/header/nav.php'); ?>
+<?php include('reusable/admin-header.php'); ?>
 
 <h1>Create an Account</h1>
 
