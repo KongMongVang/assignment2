@@ -1,8 +1,9 @@
 <?php
-session_start();
+    session_start();
 
-if (!isset($_SESSION['id'])) {
-    header("Location: login.php");
-    exit();
-}
-?>
+    function secure(){
+        if (!isset($_SESSION['id'])) {
+            header("Location: /assignment2/admin/login.php");
+            exit();
+        }
+    }

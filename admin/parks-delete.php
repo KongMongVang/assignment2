@@ -5,8 +5,8 @@
 <?php
 require('reusable/connect.php');
 
-if(isset($_POST['delete-park'])) {
-    $id = $_POST['id'];
+if(isset($_GET['delete-park'])) {
+    $id = $_GET['id'];
 
     $query = 'DELETE FROM parks_and_recreation_facilities___4326 WHERE _id='. $id;
     $executedQuery = mysqli_query($connect, $query);

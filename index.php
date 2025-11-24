@@ -141,6 +141,21 @@ a:hover {
       $parks = mysqli_fetch_all($result, MYSQLI_ASSOC);
       // scho '<pre>' .print_r($schools).'</pre>'
       foreach ($parks as $park) {
+        $adminElements = "";
+        if(isset($_SESSION['id'])) {
+            $adminElements = '
+                                <div class="row row-cols-lg-auto">
+                                    <form action="admin/parks-update.php" method="GET">
+                                        <input type="hidden" name="id" value="' . $park['_id'] . '">
+                                        <button type="submit" class="btn btn-success">Update Park</button>
+                                    </form>
+                                    <form action="admin/parks-delete.php" method="GET">
+                                        <input type="hidden" name="id" value="' . $park['_id'] . '">
+                                        <button type="submit" name="delete-park" class="btn btn-success">Delete Park</button>
+                                    </form>
+                                </div>';
+        }
+
       echo '<div class="col-md-4 mt-2 mb-2">
               <div class="card">
                 <div class="card-body">
@@ -148,16 +163,7 @@ a:hover {
                 <p class="card-text"><strong>🌿 Amenities:</strong> ' . $park['AMENITIES'] . '</p>
                 <p class="card-text"><strong>📍 Address:</strong> ' . $park['ADDRESS'] . '</p>
                 <p class="card-text"><strong>🔗 URL:</strong> ' . $park['URL'] . '</p>
-                <div class="row row-cols-lg-auto">
-                  <form action="admin/parks-update.php">
-                    <input type="hidden" value="' . $park['_id'] . '">
-                    <button type="submit" class="btn btn-success">Update Park</button>
-                  </form>
-                  <form action="admin/parks-delete.php" method="POST">
-                    <input type="hidden" name="id" value="' . $park['_id'] . '">
-                    <button type="submit" name="delete-park" class="btn btn-success">Delete Park</button>
-                  </form>
-                </div>
+                ' . $adminElements . '
                 </div>
               </div>
             </div>';

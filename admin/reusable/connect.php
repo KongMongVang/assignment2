@@ -2,7 +2,7 @@
 $connect = mysqli_connect(
     'localhost',
     'root',
-    '',       // EMPTY PASSWORD for XAMPP Windows
+    'root',       // EMPTY PASSWORD for XAMPP Windows
     'parks'
 );
 
