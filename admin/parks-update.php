@@ -1,3 +1,7 @@
+<?php require_once "reusable/auth.php"; ?>
+<?php include "reusable/connect.php"; ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
