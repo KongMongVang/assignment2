@@ -50,7 +50,6 @@ if (isset($_POST['login'])) {
     <div class="container">
       <div class="row">
         <div class="col text-center">
-        <!-- <?php include("reusable/admin-header.php") ?> -->
           <h3 class="mt-5 mb-5 text-success">Login</h3>
         </div>
       </div>
