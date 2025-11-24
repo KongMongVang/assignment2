@@ -145,11 +145,11 @@ a:hover {
         if(isset($_SESSION['id'])) {
             $adminElements = '
                                 <div class="row row-cols-lg-auto">
-                                    <form action="admin/parks-update.php">
-                                        <input type="hidden" value="' . $park['_id'] . '">
+                                    <form action="admin/parks-update.php" method="GET">
+                                        <input type="hidden" name="id" value="' . $park['_id'] . '">
                                         <button type="submit" class="btn btn-success">Update Park</button>
                                     </form>
-                                    <form action="admin/parks-delete.php" method="POST">
+                                    <form action="admin/parks-delete.php" method="GET">
                                         <input type="hidden" name="id" value="' . $park['_id'] . '">
                                         <button type="submit" name="delete-park" class="btn btn-success">Delete Park</button>
                                     </form>
