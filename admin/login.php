@@ -50,7 +50,8 @@ if (isset($_POST['login'])) {
     <div class="container">
       <div class="row">
         <div class="col text-center">
-          <h3 class="mt-5 mb-5">Login</h3>
+        <!-- <?php include("reusable/admin-header.php") ?> -->
+          <h3 class="mt-5 mb-5 text-success">Login</h3>
         </div>
       </div>
       <div class="row">
@@ -70,7 +71,7 @@ if (isset($_POST['login'])) {
               <label for="password" class="form-label">Password</label>
               <input type="password" class="form-control" name="password" id="password">
             </div>
-            <button type="submit" class="btn btn-primary" name="login">Login</button>
+            <button type="submit" class="btn btn-success" name="login">Login</button>
           </form>
         </div>
       </div>
